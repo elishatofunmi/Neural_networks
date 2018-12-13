@@ -1,0 +1,10 @@
+Serey loffe and Christian Szegedy proposed a technique called Batch Normalization(BN) to address the vanishing/exploding gradients problems, and more generally the problem of distribution of each layer's input changes during training, as the parameters of the previous layers change (which they call the internal Covariate shift problem).
+
+The Technique consists of adding an operation in the model just before the activation function of each layer, simply zero-centering and normalizing the inputs, then scaling and shifting the result using two new parameters per layer (one for scaling, the other for shifting). In other words, this operation lets the model learn the optimal scale and mean of the inputs for each layer.
+
+In order to zero-center and normalize the inputs, the algorithm needs to estimate the inputs' mean and standard deviation. It does so by evaluating the mean and standard deviation of the inputs over the current mini-batch.
+
+
+Batch Normalization also acts like a regularizer, reducing the need for other regularization techniques (such as dropout).
+
+Batch normalization does, however, add some complexity to the model (although it removes the need for normalizing the input data since the first layer will take care of that, provided it is batch normalized).
