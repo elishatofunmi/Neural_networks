@@ -20,7 +20,6 @@
 
 
 import numpy as np
-import Exception
 import warnings
 
 class _batch_normalization:
@@ -84,7 +83,7 @@ class _batch_normalization:
         compute the empirical mean, evaluated over the whole mini-batch B.
         """
         value =  0
-        sum_mean = value+=x_value[k] for k in range(1, mb)
+        sum_mean = sum([x_value[k] for k in range(1, mb)])
         return sum_mean/mb
     
     
@@ -94,7 +93,7 @@ class _batch_normalization:
         compute the emperical standard deviation over the whole mini-batch
         given minibatch mb and data x (data batch).
         """
-        mean_difference = [pow(x_value[value] - emprical_mean,2) for value in range(1,mb)]
+        mean_difference = sum([pow(x_value[value] - emprical_mean,2) for value in range(1,mb)])
         return mean_difference/mb
     
     
@@ -116,7 +115,7 @@ class _batch_normalization:
     
     
     
-    def _output_batch_normalizer(self, x_value,shift_param, scaler,ea, mb):
+    def _output_batch_normalizer(self, x_value,shift_param = 2, scaler = 4,ea = 0.00005, mb = 3):
         """
         *****************************************************************
         This outputs the batch normalized solution of a data
@@ -135,6 +134,8 @@ class _batch_normalization:
         
     
 if __name__ == "__main__":
-    batch_normalization(sys.argv)
+    batch_norm = _batch_normalization()
+    value = [4,3,2,4,1,5,7,8,5]
+    batch_norm._output_batch_normalizer.apply(value)
     
 
