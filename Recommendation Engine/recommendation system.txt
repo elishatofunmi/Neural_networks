@@ -1,0 +1,11 @@
+https://towardsdatascience.com/how-to-build-a-simple-recommender-system-in-python-375093c3fb7d
+
+https://towardsdatascience.com/beginners-recommendation-systems-with-python-ee1b08d2efb6
+
+https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/
+
+
+https://realpython.com/build-recommendation-engine-collaborative-filtering/
+
+https://www.packtpub.com/big-data-and-business-intelligence/hands-recommendation-systems-python
+
